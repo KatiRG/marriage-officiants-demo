@@ -1,0 +1,10 @@
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+header {
+    background: var(--gradient-7);
+    color: var(--blue-0); /* text color */
+    text-align: center;
+    /* padding: vertical(fluid) horizontal(static) */
+    padding: var(--size-fluid-1) var(--size-1);
+}
