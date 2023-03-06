@@ -53,13 +53,16 @@
   </head>
   <body>
     <header>
-        <h1>Ontario Wedding Officiants List</h1>
+        <h1>Find a Wedding Officiant in Ontario</h1>
         <p>Based on the <a href="https://data.ontario.ca/dataset/registered-marriage-officiants">Registered marriage officiants dataset</a> from the <a href="https://data.ontario.ca/">Ontario Data Catalogue</a>
         <p style="font-size: small;">Built with extreme speed by <a href="https://github.com/aharnum-ods">Alan Harnum</a> using <a href="https://www.11ty.dev/">Eleventy</a> and <a href="https://alpinejs.dev/">Alpine.js</a>. Not an official project of the Ontario Digital Service! Hello Civic Tech folks!</p>
     </header>
 
     <main>
-        <p>Details on <strong>{{ weddingOfficiants.officiants.length }}</strong> officiants from <strong>{{ weddingOfficiants.affiliations.length }}</strong> affiliations, in <strong>{{ weddingOfficiants.municipalities.length }}</strong> municipalities.</p>
+        <p>Choose from <strong>{{ weddingOfficiants.officiants.length.toLocaleString("en-US") }}</strong> 
+        officiants from <strong>{{ weddingOfficiants.affiliations.length.toLocaleString("en-US") }}</strong> 
+        affiliations, in <strong>{{ weddingOfficiants.municipalities.length.toLocaleString("en-US") }}</strong>
+        municipalities.</p>
 
         <div x-cloak x-data="{showSection: false}">
             <h2>By Municipality <button @click="showSection = !showSection">Show</button></h2>
