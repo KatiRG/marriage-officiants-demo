@@ -49,6 +49,14 @@
             margin-inline: max(((100% - 70rem) / 2), var(--size-fluid-4));
         }
 
+        .searchbar {
+            line-height: var(--font-lineheight-5);
+            width: 75%;
+            font-size: var(--font-size-6);
+            letter-spacing: var(--font-letterspacing-1);
+            border-radius: var(--radius-2);
+        }
+
     </style>
   </head>
   <body>
@@ -64,8 +72,13 @@
         affiliations, in <strong>{{ weddingOfficiants.municipalities.length.toLocaleString("en-US") }}</strong>
         municipalities.</p>
 
+        <div x-data="{ search: '' }">
+            <input type="text" class="searchbar" x-model="search" placeholder="Enter search text">
+        </div>
+
         <div x-cloak x-data="{showSection: false}">
-            <h2>By Municipality <button @click="showSection = !showSection">Show</button></h2>
+            <h2>By Municipality</h2>
+            <button @click="showSection = !showSection">Show All</button>
             {% for municipality, officiants in weddingOfficiants.officiants | sort(attribute='Municipality') | groupby("Municipality") %}
                 <div x-show="showSection" x-cloak x-data="{show: false}">            
                     <h4>{{ municipality }} <button @click="show = !show">Show</button></h4>            
